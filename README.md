@@ -1,2 +1,2 @@
 Hello everyone, My name is Akshay Ladne. 
-I created this repository just to save and show as i'm learning and practicing alongwith.
+I created this repository to save and show my code while learning and practicing.
