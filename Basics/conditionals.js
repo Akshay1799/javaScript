@@ -171,7 +171,7 @@ function isLeapYear(year){
 
     }
 }
-isLeapYear(2023);
-isLeapYear(2024);
-isLeapYear(2053);
-isLeapYear(2012);
+// isLeapYear(2023);
+// isLeapYear(2024);
+// isLeapYear(2053);
+// isLeapYear(2012);
