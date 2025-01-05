@@ -32,6 +32,12 @@ const otherNum = new Number(1000000);
 // console.log(Math.min(2,4,7,9));
 // console.log(Math.pow(2,8));
 
+let max = 20;
+let min = 10;
+
+// console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+
+
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Random discount generator
