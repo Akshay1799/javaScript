@@ -140,3 +140,97 @@ const Employee = {
 // Employee.employeeDetails();
 // Employee.giveRaise(10);
 // Employee.employeeDetails();
+
+
+// 2. Library System
+
+let book = {
+    title: 'The compound effect',
+    author: 'Darren hardy',
+    year: 2018,
+    isAvailable: true,
+
+    borrowBook: function(){
+        if (this.isAvailable) {
+            if (this.isAvailable = false) {
+                console.log(`${this.title}, is borrowed`);
+            }
+            else{
+                console.log(`${this.title}, is not available`);
+            }
+        }
+    },
+
+    returnBook: function(){
+        if (!this.isAvailable) {
+            this.isAvailable = true;
+            console.log(`${this.book}, has been returned.`);
+        }
+        else{
+            console.log(`${this.book}, was not borrowed.`);
+        }
+    },
+
+    displayDetails: function(){
+        console.log(`Title: ${this.title}`);
+        console.log(`Author: ${this.author} `);
+        console.log(`Year: ${this.year} `);
+        console.log(`Availability: ${this.isAvailable? "available": "Not available"} `);
+        
+    }
+
+}
+
+// book.displayDetails();
+// book.borrowBook();
+// book.displayDetails();
+// book.returnBook();
+// book.displayDetails();
+
+
+// 3. Shopping Cart
+
+let shoppingCart = {
+    items : [],
+
+    addItem: function(name, price){
+        this.items.push({name, price});
+        console.log(`${name} has been added to the cart`);
+    },
+
+    removeItem: function(name){
+        const initialLength = this.items.length;
+        this.items = this.items.filter(item => item.name != name);
+
+        if (this.items.length < initialLength) {
+            console.log(`${name} has been removed from the cart`);
+            
+        } else {
+            console.log(`${name} was not found in the cart`);
+        }
+    },
+
+    calculateTotal: function(){
+        const total = this.items.reduce((sum, item) => sum + item.price, 0);
+        return total;
+    },
+
+    displayCart: function(){
+        console.log("Cart Contents: ");
+        this.items.forEach(item => {
+            console.log(` -${item.name}: $${item.price}`);
+            
+        })
+        console.log(`Total Price: $${this.calculateTotal()}`);
+        
+    }
+
+
+}
+
+shoppingCart.addItem("Apple", 1.2);
+shoppingCart.addItem("Banana", 0.8);
+shoppingCart.displayCart();
+shoppingCart.removeItem("Banana");
+shoppingCart.displayCart();
+shoppingCart.removeItem("Grapes");
