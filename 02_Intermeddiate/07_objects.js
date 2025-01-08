@@ -228,9 +228,9 @@ let shoppingCart = {
 
 }
 
-shoppingCart.addItem("Apple", 1.2);
-shoppingCart.addItem("Banana", 0.8);
-shoppingCart.displayCart();
-shoppingCart.removeItem("Banana");
-shoppingCart.displayCart();
-shoppingCart.removeItem("Grapes");
+// shoppingCart.addItem("Apple", 1.2);
+// shoppingCart.addItem("Banana", 0.8);
+// shoppingCart.displayCart();
+// shoppingCart.removeItem("Banana");
+// shoppingCart.displayCart();
+// shoppingCart.removeItem("Grapes");
