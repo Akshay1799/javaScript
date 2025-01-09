@@ -136,6 +136,77 @@ function context() {
     // const func = (num1, num2) => (num1 + num2) // we don't need to write "return" keyword if we use implicite way but in curly braces we'll have to.
     
     // const func = (num1, num2) => ({name: 'Akshay'});
-    
+
     // console.log(func(2,5));
     
+
+    //+++++ IIFE(Immediate Invoked Function Expressions) +++++
+
+    (function message() {
+        // named IIFE
+        // console.log("Connection Successful.");
+        
+    })(); // semicolon is important when we execute two functions simultaneously
+    ((name) => {
+        // console.log(`Second Connection Successful ${name}`);
+        
+    })('Akshay')
+
+    //****************************************************** 
+
+    // 1: Temperature Converter
+
+    function celsiusToFahrenheit(celsius){
+        return (celsius * 9/5) + 32;
+    }
+
+    function ahrenheitToCelsius(Fahrenheit){
+        return (Fahrenheit - 32) * 5/9;
+    }
+
+    let celsius = 0;
+    let Fahrenheit = 100;
+
+    // console.log(`${celsius} is ${celsiusToFahrenheit(44)}`);
+    // console.log(`${Fahrenheit} is ${celsiusToFahrenheit(45)}`);
+    
+
+// 2. Calculator
+
+const readlineSync = require('readline-sync'); // Import readline-sync module
+
+function add(a, b){
+    return a + b;
+};
+function sub(a, b){
+    return a - b;
+};
+function multi(a, b){
+    return a * b;
+};
+function div(a, b){
+    if (num2 === 0) {
+        return `Error: Division by 0 is not allowed. please provide a valid number. `;
+    }
+    return a / b;
+};
+
+let num1 = parseFloat(readlineSync.question("Enter 1st Number: "));
+let num2 = parseFloat(readlineSync.question("Enter 2nd Number: "));
+let operation = readlineSync.question("Enter the operation(+, -, *, /)");
+
+let result;
+
+if (operation === "+") {
+    result = add(num1, num2);
+} else if (operation === "-"){
+    result = sub(num1, num2);
+}else if (operation === "*"){
+    result = multi(num1, num2);
+}else if (operation === "/"){
+    result = div(num1, num2);
+}else{
+    console.log("Invalid Operation.");
+    
+}
+console.log(`The result is: ${result}`);
