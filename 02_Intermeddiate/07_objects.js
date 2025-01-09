@@ -234,3 +234,57 @@ let shoppingCart = {
 // shoppingCart.removeItem("Banana");
 // shoppingCart.displayCart();
 // shoppingCart.removeItem("Grapes");
+
+
+// 4. Student Management
+
+const student = {
+    name: "sam",
+    rollno: 12,
+    subjects: ['Maths', 'Science'],
+    marks: {
+        maths: 88,
+        science: 92
+    },
+
+    addSubject: function(subjectName){
+        if (!this.subjects.includes(subjectName)) {
+            this.subjects.push(subjectName);
+            this.marks[subjectName] = 0;
+        }
+        else{
+            console.log(`${this.subjectName} is already enrolled`);
+        }
+    },
+
+    updateMarks: function(subjectName, marks){
+        if (this.subjects.includes(subjectName)) {
+            this.marks[subjectName] = marks;
+        }
+        else{
+            console.log(`${subjectName} is not enrolled, please add the subject first.`);
+            
+        }
+    },
+
+    calculateAverage: function(){
+        const totalMarks = Object.values(this.marks).reduce((sum, marks) => sum + marks, 0);
+        const numberOfSubjects = Object.keys(this.marks).length;
+        return totalMarks/numberOfSubjects;
+    },
+
+    studentDetails: function(){
+        console.log(`Name: ${this.name}`);
+        console.log(`Roll Number: ${this.rollno}`);
+        console.log(`Subjects: ${this.subjects.join(', ')}`);
+        console.log(`Marks: ${JSON.stringify(this.marks)}`);
+        console.log(`Name: ${this.name}`);
+        console.log(`Average Marks: ${this.calculateAverage().toFixed(2)}`);
+        
+    }
+};
+
+// student.studentDetails();
+// student.addSubject("English");
+// student.updateMarks("English", 95);
+// student.studentDetails();
