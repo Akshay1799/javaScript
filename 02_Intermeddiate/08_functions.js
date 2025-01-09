@@ -206,7 +206,7 @@ if (operation === "+") {
 }else if (operation === "/"){
     result = div(num1, num2);
 }else{
-    console.log("Invalid Operation.");
+    // console.log("Invalid Operation.");
     
 }
-console.log(`The result is: ${result}`);
+// console.log(`The result is: ${result}`);
