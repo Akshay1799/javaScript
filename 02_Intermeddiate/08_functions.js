@@ -191,22 +191,75 @@ function div(a, b){
     return a / b;
 };
 
-let num1 = parseFloat(readlineSync.question("Enter 1st Number: "));
-let num2 = parseFloat(readlineSync.question("Enter 2nd Number: "));
-let operation = readlineSync.question("Enter the operation(+, -, *, /)");
+// let num1 = parseFloat(readlineSync.question("Enter 1st Number: "));
+// let num2 = parseFloat(readlineSync.question("Enter 2nd Number: "));
+// let operation = readlineSync.question("Enter the operation(+, -, *, /)");
 
-let result;
+// let result;
 
-if (operation === "+") {
-    result = add(num1, num2);
-} else if (operation === "-"){
-    result = sub(num1, num2);
-}else if (operation === "*"){
-    result = multi(num1, num2);
-}else if (operation === "/"){
-    result = div(num1, num2);
-}else{
+// if (operation === "+") {
+//     result = add(num1, num2);
+// } else if (operation === "-"){
+//     result = sub(num1, num2);
+// }else if (operation === "*"){
+//     result = multi(num1, num2);
+// }else if (operation === "/"){
+//     result = div(num1, num2);
+// }else{
     // console.log("Invalid Operation.");
     
-}
+// }
 // console.log(`The result is: ${result}`);
+
+
+// 3. Simple Interest Calculator
+
+
+const input = require('readline-sync');
+
+function simpleIntrest(principal, rate, time){
+    return principal*rate*time/100;
+}
+
+// const principal = parseFloat(input.question(`Please input your principal amount: `))
+// const rate = parseFloat(input.question(`Please input your rate: `))
+// const time = parseFloat(input.question(`Please input your time: `))
+
+// if (principal > 0 && rate > 0 && time > 0) {
+//     const intrest = simpleIntrest(principal, rate, time);
+//     console.log(`The simple intrest is: ${intrest.toFixed(2)}`);
+// }else{
+//     console.log("Please enter valid positive numbers for all inputs.");
+// }
+
+
+// 4.  BMI Calculator
+
+const userInput = require('readline-sync');
+
+function calculateBMI(weight, height){
+    return weight / (height * height);
+}
+
+function getBmiCategory(bmi){
+    if (bmi < 18.5) {
+        return `Underweight`;
+    } else if(bmi >= 18.5 && bmi <= 24.9){
+        return `Normal Weight`;
+    }else if(bmi >= 25 && bmi <= 29.9){
+        return `Overweight`;
+    }else{
+        return `Obesity`;
+    }
+}
+const weight = parseFloat(userInput.question("Enter your body weight in Kg: "))
+const height = parseFloat(userInput.question("Enter your body height in meters: "))
+
+if (weight > 0 && height >0) {
+    const bmi = calculateBMI(weight, height);
+    const category = getBmiCategory(bmi);
+    // console.log(`Your BMI is: ${bmi.toFixed(2)} and category is ${category}`);
+    
+}else{
+    // console.log("Please enter valid positive numbers for weight and height.");
+}
