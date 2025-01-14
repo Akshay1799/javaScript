@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+.tabs{
+    display: flex;
+    margin-bottom: 15px;
+}
+.tab{
+    background-color: azure;
+    font-family: gilroy;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 4px ;
+    border: 2px solid grey;
+    margin: 4px;
+    cursor: pointer;
+}
+.tab:hover{
+    background-color: beige;
+}
+h3{
+    width: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+    display: none;
+    transition: all ease-out 1s;
+}
