@@ -19,7 +19,7 @@ console.log(userInfo.encryptPassword());
 console.log(userInfo.changeUsername());
 
 
-+++++ Behind the scene +++++
+// +++++ Behind the scene +++++
 
 function user(username, email, password){
     this.username = username;
