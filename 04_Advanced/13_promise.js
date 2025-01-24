@@ -54,7 +54,7 @@ console.log(username);
 }).finally(()=>console.log("The promise is either resolved or rejected.")
 )
 
-** Both then & catch and try & catch does the same work **//
+// ** Both then & catch and try & catch does the same work **//
 
 async function consumePromiseFive(){
     try {
@@ -66,9 +66,9 @@ async function consumePromiseFive(){
 }
 consumePromiseFive()
 
-** Practice questions **\\
+// ** Practice questions **
 
-Q1
+// Q1
 
 function getUser(){
     return new Promise(function(resolve, reject){
@@ -99,7 +99,7 @@ Promise.all([getUser(), getPosts()])
     
 })
 
-Q2
+// Q2
 
 function orderFood(){
     return new Promise(function(resolve){
@@ -128,7 +128,7 @@ orderFood().then((message)=>{
     
 })
 
-Q3
+// Q3
 
 function downloadFile(filename){
     return new Promise((resolve, reject)=>{
@@ -155,7 +155,7 @@ downloadFile(filename)
     
 })
 
-Q4
+// Q4
 
 function fastTask(){
     console.time("Fast Task Time");
