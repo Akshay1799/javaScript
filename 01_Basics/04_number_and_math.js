@@ -98,4 +98,4 @@ function randomQuote(){
     return quotes[randomQuote];
 }
 
-// console.log("Quote of the day is: " + randomQuote());
+console.log("Quote for the day is: " + randomQuote());
