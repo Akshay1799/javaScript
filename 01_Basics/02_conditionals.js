@@ -175,3 +175,23 @@ function isLeapYear(year){
 // isLeapYear(2024);
 // isLeapYear(2053);
 // isLeapYear(2012);
+
+//++++++++++++++++ Password Strength Checker +++++++++++++++
+
+function passwordStrength (str){
+    let newStr = str.replaceAll(" ", "");
+    console.log(`Your password is: ${newStr}`);
+    
+    if (typeof newStr === 'number') {
+        return `Provide string value!`
+    }
+    if (newStr.length >= 8) {
+        return `Strong`;
+    } else if(newStr.length >5 && str.length < 8) {
+        return `Moderate`;
+    }else{
+        return `Weak`;
+    } 
+    
+}
+console.log(passwordStrength(' ab  24   '));
