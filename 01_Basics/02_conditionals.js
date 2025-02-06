@@ -180,7 +180,7 @@ function isLeapYear(year){
 
 function passwordStrength (str){
     let newStr = str.replaceAll(" ", "");
-    console.log(`Your password is: ${newStr}`);
+    // console.log(`Your password is: ${newStr}`);
     
     if (typeof newStr === 'number') {
         return `Provide string value!`
@@ -194,4 +194,25 @@ function passwordStrength (str){
     } 
     
 }
-console.log(passwordStrength(' ab  24   '));
+// console.log(passwordStrength(' ab  24   '));
+
+
+//++++++++++++++++ Password Strength Checker +++++++++++++++
+
+function withdrawCash(balance, amount){
+    if (amount > balance) {
+        return `Insufficient balance.`
+    } 
+    if(amount % 100 != 0){
+        return `Enter amount in multiples of 100.`
+    }
+
+    balance -= amount;
+    return`You have withdrawled ${amount}rs and your availaible balance is ${balance}`;
+    
+}
+
+console.log(withdrawCash(5000, 525));
+console.log(withdrawCash(500, 5000));
+console.log(withdrawCash(5000, 500));
+console.log(withdrawCash(5000, 5000));
