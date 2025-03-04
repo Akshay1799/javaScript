@@ -1,4 +1,4 @@
-/*
+
 let promiseOne = new Promise(function(resolve, reject){
     setTimeout(function () {
         console.log("Resolved");
@@ -365,4 +365,4 @@ Promise.race([fetchWeather(), fetchNews(), fetchSports()])
   .catch((err) => {
     console.log("ERROR: ", err);
   });
-*/
+
