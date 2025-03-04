@@ -1,3 +1,4 @@
+/*
 let promiseOne = new Promise(function(resolve, reject){
     setTimeout(function () {
         console.log("Resolved");
@@ -54,7 +55,7 @@ console.log(username);
 }).finally(()=>console.log("The promise is either resolved or rejected.")
 )
 
-// ** Both then & catch and try & catch does the same work **//
+//  Both then & catch and try & catch does the same work //
 
 async function consumePromiseFive(){
     try {
@@ -68,7 +69,7 @@ consumePromiseFive()
 
 // ** Practice questions **
 
-// Q1
+// Q1 get User
 
 function getUser(){
     return new Promise(function(resolve, reject){
@@ -99,7 +100,7 @@ Promise.all([getUser(), getPosts()])
     
 })
 
-// Q2
+// Q2 order Food
 
 function orderFood(){
     return new Promise(function(resolve){
@@ -128,7 +129,7 @@ orderFood().then((message)=>{
     
 })
 
-// Q3
+// Q3 download File
 
 function downloadFile(filename){
     return new Promise((resolve, reject)=>{
@@ -155,7 +156,7 @@ downloadFile(filename)
     
 })
 
-// Q4
+// Q4 fast Task completion
 
 function fastTask(){
     console.time("Fast Task Time");
@@ -184,3 +185,184 @@ Promise.all([fastTask(), slowTask()])
 })
 
 
+// Q5 Simulating an API Call
+
+function fetchUserData(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            let err = false;
+            if (!err) {
+                resolve({id:1, name:"john doe", email:"john@123gmail.com"})               
+            } else {
+                reject("ERROR: Something is not right.")
+            }
+        }, 2000)
+    })
+}
+
+userData()
+.then((data) => {
+    console.log(data);
+    
+}).catch((err) => {
+    console.log("ERROR: ", err);
+    
+}).finally(()=>console.log("The promise is either resolved or rejected.")
+)
+
+// Q6 Simulating Multiple API Calls (Chaining)
+
+function getUser() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ userId: 101, name: "Alice" });
+    }, 1000);
+  });
+};
+function fetchPosts(userId) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        user: userId,
+        posts: [
+          { postId: 101, title: "First Post" },
+          { postId: 102, title: "Second Post" },
+        ],
+      });
+    }, 2000);
+  });
+};
+function fetchComments() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([
+        { commentId: 1, text: "Nice post!" },
+        { commentId: 2, text: "Great job!" },
+      ]);
+    }, 1500);
+  });
+};
+
+getUser()
+.then((user)=>{
+    console.log("User fetched ", user);
+    return fetchPosts(user.userId);
+})
+.then((data)=>{
+    console.log("Posts fetched ", data.posts);
+    return fetchComments(data.posts[0].postId);
+})
+.then((comments)=>{
+    console.log("Comments fetched ", comments);
+    
+})
+.catch((error)=>{
+    console.log("ERROR: ", error);
+    
+});
+
+
+// Q7 Racing Two Tasks (Promise.race)
+
+function downloadFile(){
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+            resolve("Main file downloaded!")
+        }, 3000);
+    })
+}
+function downloadBackupFile(){
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+            resolve("Backup file downloaded!")
+        }, 2000);
+    })
+}
+
+Promise.race([downloadFile(), downloadBackupFile()])
+.then((fastesDownload)=>{
+    console.log("fastesDownload: ", fastesDownload);
+    
+})
+.catch((error)=>{
+    console.log("Something wrong happened: ", error);
+    
+})
+
+
+// Q8 Handling Errors in Promises
+
+function placeOrder(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            let isStockAvailable = false;
+            if (isStockAvailable) {
+                resolve("Order placed successfully!");
+            }
+            else{
+                reject("Sorry, the item is out of stock!");
+            }
+        }, 2000);
+    })
+}
+placeOrder()
+.then((status)=>{
+    console.log(status);
+    
+})
+.catch((err)=>{
+    console.log(err);
+    
+})
+
+
+//Q9 Running Multiple Async Tasks (Promise.all)
+
+function fetchWeather() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ temperature: 30, condition: "Sunny" });
+    }, 3000);
+  });
+}
+function fetchNews() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(["Breaking News 1", "Breaking News 2"]);
+    }, 1000);
+  });
+}
+function fetchSports() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(["Cricket Match", "Football Match"]);
+    }, 3000);
+  });
+}
+
+//++ with Promise.all() ++//
+
+// Promise.all will wait untill every promise gets resolved.
+// It doesn't executes partially, either all or no one.
+// Promise.all([fetchWeather(), fetchNews(), fetchSports()])
+// .then(([weather, news, sports])=>{
+//     console.log("Weather: ", weather);
+//     console.log("news: ", news);
+//     console.log("sports: ", sports);
+
+// })
+// .catch((err)=>{
+//     console.log("ERROR: ", err);
+
+// })
+
+//++ with Promise.race() ++//
+
+Promise.race([fetchWeather(), fetchNews(), fetchSports()])
+  .then((fastone) => {
+    console.log("Fastest one is: ", fastone);
+  })
+  .catch((err) => {
+    console.log("ERROR: ", err);
+  });
+*/
