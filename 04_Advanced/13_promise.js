@@ -200,15 +200,15 @@ function fetchUserData(){
     })
 }
 
-userData()
-.then((data) => {
-    console.log(data);
+// userData()
+// .then((data) => {
+//     console.log(data);
     
-}).catch((err) => {
-    console.log("ERROR: ", err);
+// }).catch((err) => {
+//     console.log("ERROR: ", err);
     
-}).finally(()=>console.log("The promise is either resolved or rejected.")
-)
+// }).finally(()=>console.log("The promise is either resolved or rejected.")
+// )
 
 // Q6 Simulating Multiple API Calls (Chaining)
 
@@ -366,3 +366,23 @@ Promise.race([fetchWeather(), fetchNews(), fetchSports()])
     console.log("ERROR: ", err);
   });
 
+function knownUser(username, password){
+    return new Promise((resolve, reject)=>{
+        if (username =="Akshay" && password =="123@123"){
+        setTimeout(() => {
+                resolve("loggedIn Successfully ho gaya!")
+        }, 3000);
+    }
+    else{
+        reject("Loggin error!")
+    }
+    })
+}
+knownUser("Akshay", "123@123")
+.then((result) => {
+    console.log(result);
+    
+}).catch((err) => {
+    console.log(err);
+    
+});
