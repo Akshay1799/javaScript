@@ -3,7 +3,8 @@ function findMax(arr){
 
     let largestNum = [0];
 
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 1; i < arr.length; i++) {
+        // in this kind of problems, akways start from second element/index
         if (largestNum < arr[i]) {
             largestNum = arr[i];
         }
