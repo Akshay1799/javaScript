@@ -288,3 +288,4 @@ const student = {
 // student.addSubject("English");
 // student.updateMarks("English", 95);
 // student.studentDetails();
+

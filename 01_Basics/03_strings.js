@@ -68,4 +68,3 @@ function countOccurence(string, target){
 // console.log(countOccurence("Akshay", "a"));
 // console.log(countOccurence("Sunny", "n"));
 // console.log(countOccurence("Sunny", ""));
-
